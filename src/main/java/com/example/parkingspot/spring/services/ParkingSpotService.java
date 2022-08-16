@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.parkingspot.spring.models.ParkingSpotModel;
 import com.example.parkingspot.spring.repository.ParkingSpotRepository;
@@ -44,6 +45,11 @@ public class ParkingSpotService {
     }
 
     public Optional<ParkingSpotModel> findById(UUID id) {
-        return null;
+        return parkingSpotRepository.findById(id);
+    }
+
+    @Transactional
+    public void delete(ParkingSpotModel parkingSpotModel) {
+         parkingSpotRepository.delete(parkingSpotModel);
     }
 }
