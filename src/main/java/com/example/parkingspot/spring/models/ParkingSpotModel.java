@@ -20,92 +20,112 @@ public class ParkingSpotModel implements Serializable {
     private UUID id;
 
     @Column(nullable = false, unique = true, length = 10)
-    private String parkingSpotNumber;
+    private String numeroVaga;
 
     @Column(nullable = false, unique = true, length = 7)
-    private String licensePlateCar;
+    private String placaCarro;
 
     @Column(nullable = false, length = 70)
-    private String brandCar;
+    private String marcaCarro;
 
     @Column(nullable = false, length = 70)
-    private String modelCar;
+    private String modeloCarro;
 
     @Column(nullable = false, length = 70)
-    private String colorCar;
+    private String corCarro;
 
     @Column(nullable = false)
-    private LocalDateTime registrationDate;
+    private LocalDateTime dataRegistro;
 
     @Column(nullable = false, length = 130)
-    private String responsibleName;
+    private String nomeResponsavel;
 
     @Column(nullable = false, length = 30)
-    private String apartment;
+    private String apartamento;
 
     @Column(nullable = false, length = 30)
-    private String block;
-    
+    private String blocoApartamento;
+
     public UUID getId() {
         return id;
     }
+
     public void setId(UUID id) {
         this.id = id;
     }
-    public String getParkingSpotNumber() {
-        return parkingSpotNumber;
+
+    public String getNumeroVaga() {
+        return numeroVaga;
     }
-    public void setParkingSpotNumber(String parkingSpotNumber) {
-        this.parkingSpotNumber = parkingSpotNumber;
+
+    public void setNumeroVaga(String numeroVaga) {
+        this.numeroVaga = numeroVaga;
     }
-    public String getLicensePlateCar() {
-        return licensePlateCar;
+
+    public String getPlacaCarro() {
+        return placaCarro;
     }
-    public void setLicensePlateCar(String licensePlateCar) {
-        this.licensePlateCar = licensePlateCar;
+
+    public void setPlacaCarro(String placaCarro) {
+        this.placaCarro = placaCarro;
     }
-    public String getBrandCar() {
-        return brandCar;
+
+    public String getMarcaCarro() {
+        return marcaCarro;
     }
-    public void setBrandCar(String brandCar) {
-        this.brandCar = brandCar;
+
+    public void setMarcaCarro(String marcaCarro) {
+        this.marcaCarro = marcaCarro;
     }
-    public String getModelCar() {
-        return modelCar;
+
+    public String getModeloCarro() {
+        return modeloCarro;
     }
-    public void setModelCar(String modelCar) {
-        this.modelCar = modelCar;
+
+    public void setModeloCarro(String modeloCarro) {
+        this.modeloCarro = modeloCarro;
     }
-    public String getColorCar() {
-        return colorCar;
+
+    public String getCorCarro() {
+        return corCarro;
     }
-    public void setColorCar(String colorCar) {
-        this.colorCar = colorCar;
+
+    public void setCorCarro(String corCarro) {
+        this.corCarro = corCarro;
     }
-    public LocalDateTime getRegistrationDate() {
-        return registrationDate;
+
+    public LocalDateTime getDataRegistro() {
+        return dataRegistro;
     }
-    public void setRegistrationDate(LocalDateTime registrationDate) {
-        this.registrationDate = registrationDate;
+
+    public void setDataRegistro(LocalDateTime dataRegistro) {
+        this.dataRegistro = dataRegistro;
     }
-    public String getResponsibleName() {
-        return responsibleName;
+
+    public String getNomeResponsavel() {
+        return nomeResponsavel;
     }
-    public void setResponsibleName(String responsibleName) {
-        this.responsibleName = responsibleName;
+
+    public void setNomeResponsavel(String nomeResponsavel) {
+        this.nomeResponsavel = nomeResponsavel;
     }
-    public String getApartment() {
-        return apartment;
+
+    public String getApartamento() {
+        return apartamento;
     }
-    public void setApartment(String apartment) {
-        this.apartment = apartment;
+
+    public void setApartamento(String apartamento) {
+        this.apartamento = apartamento;
     }
-    public String getBlock() {
-        return block;
+
+    public String getBlocoApartamento() {
+        return blocoApartamento;
     }
-    public void setBlock(String block) {
-        this.block = block;
+
+    public void setBlocoApartamento(String blocoApartamento) {
+        this.blocoApartamento = blocoApartamento;
     }
 
     
+   
 }

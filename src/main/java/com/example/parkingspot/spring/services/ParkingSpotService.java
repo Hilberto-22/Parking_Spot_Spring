@@ -1,55 +1,41 @@
 package com.example.parkingspot.spring.services;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.example.parkingspot.spring.models.ParkingSpotModel;
 import com.example.parkingspot.spring.repository.ParkingSpotRepository;
 
 @Service
 public class ParkingSpotService {
-    
-   final ParkingSpotRepository parkingSpotRepository;
+   
+    final ParkingSpotRepository parkingSpotRepository;
 
     public ParkingSpotService(ParkingSpotRepository parkingSpotRepository) {
         this.parkingSpotRepository = parkingSpotRepository;
     }
 
-    @javax.transaction.Transactional
-    public ParkingSpotModel save(ParkingSpotModel parkingSpotModel) {
+    @Transactional
+    public ParkingSpotModel salvarVaga(ParkingSpotModel parkingSpotModel) {
         return parkingSpotRepository.save(parkingSpotModel);
     }
 
-    public boolean existsByLicensePlateCar(String licensePlateCar) {
-        return parkingSpotRepository.existsByLicensePlateCar(licensePlateCar);
+    public boolean existePlacaCarro(String placaCarro) {
+        return parkingSpotRepository.existeByPlacaCarro(placaCarro);
     }
 
-    public boolean existsByParkingSpotNumber(String parkingSpotNumber) {
-        return parkingSpotRepository.existsByParkingSpotNumber(parkingSpotNumber);
+    public boolean existeNumeroVaga(String numeroVaga) {
+        return parkingSpotRepository.existeByNumeroVaga(numeroVaga);
     }
 
-    public boolean existsByApartmentAndBlock(String apartment, String block) {
-        return parkingSpotRepository.existsByApartmentAndBlock(apartment, block);
+    public boolean existeBlocoEApartamento(String apartamento, String bloco) {
+        return parkingSpotRepository.existeByApartamentoBloco(apartamento, bloco);
     }
 
-    /**
-     * 
-     * @return lista todos os registros cadastrados no banco
-     */
-    public List<ParkingSpotModel> findAll() {
+    public List<ParkingSpotModel> listarTodos() {
         return parkingSpotRepository.findAll();
     }
 
-    public Optional<ParkingSpotModel> findById(UUID id) {
-        return parkingSpotRepository.findById(id);
-    }
-
-    @Transactional
-    public void delete(ParkingSpotModel parkingSpotModel) {
-         parkingSpotRepository.delete(parkingSpotModel);
-    }
+    
 }
