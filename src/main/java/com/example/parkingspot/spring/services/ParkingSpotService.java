@@ -1,6 +1,8 @@
 package com.example.parkingspot.spring.services;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,6 +37,19 @@ public class ParkingSpotService {
 
     public List<ParkingSpotModel> listarTodos() {
         return parkingSpotRepository.findAll();
+    }
+
+    public Optional<ParkingSpotModel> listarPorId(UUID id) {
+        return parkingSpotRepository.findById(id);
+    }
+
+    @Transactional
+    public void deletarDadosVaga(ParkingSpotModel parkingSpotModel) {
+        parkingSpotRepository.delete(parkingSpotModel);
+    }
+
+    public ParkingSpotModel atualizar(ParkingSpotModel parkingSpotModel) {
+        return parkingSpotRepository.save(parkingSpotModel);
     }
 
     
