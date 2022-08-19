@@ -24,15 +24,15 @@ public class ParkingSpotService {
     }
 
     public boolean existePlacaCarro(String placaCarro) {
-        return parkingSpotRepository.existeByPlacaCarro(placaCarro);
+        return parkingSpotRepository.existsByPlacaCarro(placaCarro);
     }
 
     public boolean existeNumeroVaga(String numeroVaga) {
-        return parkingSpotRepository.existeByNumeroVaga(numeroVaga);
+        return parkingSpotRepository.existsByNumeroVaga(numeroVaga);
     }
 
-    public boolean existeBlocoEApartamento(String apartamento, String bloco) {
-        return parkingSpotRepository.existeByApartamentoBloco(apartamento, bloco);
+    public boolean existeBlocoEApartamento(String bloco, String apartamento) {
+        return parkingSpotRepository.existsByBlocoAndApartamento(bloco,apartamento);
     }
 
     public List<ParkingSpotModel> listarTodos() {

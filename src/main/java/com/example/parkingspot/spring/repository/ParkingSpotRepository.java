@@ -10,10 +10,10 @@ import com.example.parkingspot.spring.models.ParkingSpotModel;
 @Repository
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpotModel, UUID>{
 
-    boolean existeByPlacaCarro(String placaCarro);
+    boolean existsByPlacaCarro(String placaCarro);
 
-    boolean existeByNumeroVaga(String numeroVaga);
+    boolean existsByNumeroVaga(String numeroVaga);
 
-    boolean existeByApartamentoBloco(String apartamento, String bloco);
+    boolean existsByBlocoAndApartamento(String bloco, String apartamento);
     
 }
