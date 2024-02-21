@@ -17,8 +17,10 @@ import lombok.Data;
 @Table(name = "TB_PARKING_SPOT")
 @Data
 public class ParkingSpotModel implements Serializable {
-     
-    @Id
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
